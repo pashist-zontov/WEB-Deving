@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato&family=Lexend+Zetta:wght@700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    height: 100vh;
+    background: url('./background.avif');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 80%;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 25px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar #logof {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar #logof i {
+    font-size: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    margin-right: 35px;
+}
+
+.navbar ul li {
+    position: relative;
+    list-style: none;
+    margin-left: 35px;
+    font-weight: bold;
+}
+
+.navbar ul li a { font-size: large; }
+
+.navbar ul li::after {
+    content: '';
+    left: 0;
+    bottom: -2px;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    transform: scaleX(0);
+    transition: transform .5s;
+
+}
+.navbar ul li:hover::after { transform: scaleX(1); }
+
+.AnimBtn {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: orange /* или можно взять rgb(255, 196, 0) */;
+    border: 3px solid black;
+    cursor: pointer;
+    overflow: hidden;
+    transform: color 0.3s ease;
+    z-index: 1;
+}
+
+.AnimBtn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: black;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.5s ease;
+    z-index: -1;
+}
+
+.AnimBtn:hover {
+    color: white;
+    border: 3px solid white;
+}
+
+.AnimBtn:hover::after {
+    width: 150%;
+    height: 150%;
+}
+
+.main-part {
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    width: 800px;
+    padding: 50px 100px 0;
+    color: black;
+}
+
+.texts h1 { font-size: 50px; }
+.texts p { margin: 10px 0 25px 0; }
+
+.wtht { background: white; }
+.under {
+    margin: 0 5px 0 5px;
+    padding: inherit 30px inherit 30px;
+}
+
+
+.sugg-container {
+    position: relative;
+    max-width: 550px;
+    margin: 0;
+    padding: 0 30px;
+    /* border: 2px solid red; */
+}
+
+.sugg-wrapper {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.sugg-item {
+    flex: 0 0 200px;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    transition: transform 0.3 ease;
+}
+
+.sugg-item h3 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.sugg-item p {
+    margin: 0;
+    color: #7f8c8d;
+    text-align: center;
+}
+
+.funcs {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+
+.funcs h3 {
+    position: absolute;
+    top: -5%;
+    left: 15%;
+}
+
+.scroll-arrow {
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1;
+    transition: all 0.3 ease;
+}
+
+.scroll-arrow:hover {
+    color: black;
+    background: white;
+    border: 2px solid black;
+}
+
+.sugg-wrapper { margin-left: 30px; }
