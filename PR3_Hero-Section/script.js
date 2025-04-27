@@ -7,7 +7,6 @@ const scrollAmount = 200; // Ширина ячейки + доп. длина пе
 function checkScroll() {
     leftArrow.classList.toggle('disabled', scroller.scrollLeft <= 0);
     rightArrow.classListt.toggle('disabled', scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 1)
-
 }
 
 // Влево
