@@ -17,6 +17,7 @@
 body {
     color: var(--primary);
     line-height: 1.5;
+    background: var(--light)
 }
 
 
@@ -32,11 +33,9 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-
-}
-
-header {
     font-size: 18px;
+    position: sticky;
+
 }
 
 header a {
@@ -70,46 +69,156 @@ nav a:hover::before {
     width: 100%;
 }
 
-.Home:hover {
+.home:hover {
     opacity: 0.7;
 }
 
-main {
-    background: url(./images/Work.jpg) no-repeat;
+.hero {
+    background: url(./assets/Work.jpg);
     background-size: cover;
-    position: fixed;
+    position: relative;
     color: var(--light);
-    width: 100%;
-    height: 100%;
-}
-
-main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.headings {
+    padding: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
+    min-height: 100vh;
+    font-size: 20px;
 
 }
 
-.headings h1, .headings h5 {
+hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.cta {
+    background: var(--light);
+    width: 400px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all var(--transition);
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.cta:hover {
+    transform: scale(1.15);
+}
+
+.secondary {
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 3rem 10%;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.feat-card {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    align-items: center;
+    background: white;
+    height: 100%;
+    transition: all var(--transition);
+}
+
+.feat-card:hover {
+    transform: translateY(-15px);
+}
+
+.feat-card img {
+    height: 80px;
+}
+
+.feat-card h4, .feat-card p {
+    text-align: center;
+}
+
+.hero h1, .hero h5 {
     width: 30%;
     max-width: 800px;
     padding: 0 20px;
     margin: 30px;
 
+}
+
+hr {
+    margin: 20px;
+}
+
+video {
+    height: 500px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.8);
+}
+
+.rev-container {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 40px;
+    justify-content: start;
+    text-align: start;
+}
+
+.rev-card {
+    flex: 0 0 100px;
+    min-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    scroll-snap-align: start;
+}
+
+.rev-card img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    margin-left: 20px;
+    width: 200px;
+}
+
+.funcs {
+    height: 50px;
+    width: 300px;
+    position: relative;
+}
+
+.scroll-arrow {
+    background: white;
+    color: var(--primary);
+    border: 0.5px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity var(--transition);
+}
+
+.scroll-arrow:hover {
+    opacity: 0.5;
 }
 
 /* Footer */
@@ -126,3 +235,124 @@ footer {
     margin-bottom: 0.5rem;
     opacity: 0.8;
   }
+
+
+  @media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        width: 90%;
+        font-size: 2rem;
+    }
+}
+
+
+/* !Адаптивность! */
+@media (max-width: 480px) {
+    header {
+        position: inherit;
+        font-size: 8px;
+        justify-content: space-between;
+    }
+    
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        padding: 15px;
+    }
+    
+    nav a {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .hero {
+        min-height: 70vh;
+        
+    }
+    
+    .hero h1, .hero h5, .cta {
+        width: 300px;
+    }
+
+    .feat-card {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .feat-card h4 {
+        font-size: 1.1rem;
+    }
+    
+    .feat-card p {
+        font-size: 0.9rem;
+    }
+
+    .video-section video {
+        width: 300px;
+        height: 200px;
+        justify-content: center;
+    }
+
+    .rev-container {
+        padding: 0 5%;
+    }
+    
+    .rev-card {
+        min-width: 85%;
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .stars {
+        margin-left: 0;
+        width: 150px;
+    }
+    
+    .funcs {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .scroll-arrow {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    video {
+        width: 95%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    footer {
+        padding: 1.5rem 5%;
+    }
+    
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+    
+    .cta {
+        font-size: 0.9rem;
+        height: 45px;
+    }
+    
+    .rev-card {
+        min-width: 90%;
+    }
+}
