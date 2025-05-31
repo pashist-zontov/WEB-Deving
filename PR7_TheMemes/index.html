@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MemeMuseum</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <ul>
+                    <li>Главная</li>
+                    <li>О нас</li>
+                    <li>Аккаунт</li>
+                </ul>
+            </header>
+
+            <main>
+                <div class="primary">
+                    <h1>Добро пожаловать в наш музей мемов!</h1>
+                    <p>Здесь представлена галерея исторических мемов нашего времени. Если вы не нашли здесь свой любимый мем - </p>
+                </div>
+
+                <div class="secondary">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="Games">Игровые</button>
+                        <button class="tab-btn" data-tab="Thatslife">Жизненные</button>
+                        <button class="tab-btn" data-tab="Sports">Спортивные</button>
+                        <button class="tab-btn" data-tab="Classic">Классика</button>
+                        <button class="tab-btn" data-tab="AddMeme">Добавить мем</button>
+                    </div>
+
+
+                    <div class="tab-content active" id="Games">
+                        <div class="searcher">
+                            <div class="search-box">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="text" id="search-games" placeholder="🔍 Поиск по названию мема...">
+                            </div>
+                        </div>
+
+
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./assets/KneeShot.jpg" alt="А потом мне прострелили колено">
+                                <div class="img-title">А потом мне прострелили колено</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./assets/NyanCat.jpg" alt="Nyan-Cat">
+                                <div class="img-title">Nyan-Cat/Нян-кэт</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./assets/SkllIssue.png" alt="Skill Issue">
+                                <div class="img-title">Skill Issue/Проблемы с навыком</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./assets/YouDied.png" alt="You Died">
+                                <div class="img-title">You Died</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Модальные окна -->
+                    <!-- Приближённое изображение -->
+                    <div class="modal">
+                        <span class="close-btn">&times;</span>
+                        <div class="modal-content">
+                            <img id="expandedImg" src="" alt="">
+                            <div id="imgInfo" class="image-info"></div>
+                        </div>
+                    </div>
+
+                    <!-- Успешная отправка мема на проверку -->
+                    <div class="notif"></div>
+                </div>
+            </main>
+        </div>
+        
+    </body>
+ 
+    <script src="./script.js"></script>
+</html>
