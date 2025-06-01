@@ -11,9 +11,9 @@
         <div class="container">
             <header>
                 <ul>
-                    <li>Главная</li>
-                    <li>О нас</li>
-                    <li>Аккаунт</li>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Аккаунт</a></li>
                 </ul>
             </header>
 
@@ -32,11 +32,10 @@
                         <button class="tab-btn" data-tab="AddMeme">Добавить мем</button>
                     </div>
 
-
+                    <!-- Игровые -->
                     <div class="tab-content active" id="Games">
                         <div class="searcher">
                             <div class="search-box">
-                                <i class="fas fa-search search-icon"></i>
                                 <input type="text" id="search-games" placeholder="🔍 Поиск по названию мема...">
                             </div>
                         </div>
@@ -61,9 +60,113 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Жизненные -->
+                    <div class="tab-content" id="Thatslife">
+                        <div class="searcher">
+                            <div class="search-box">
+                                <input type="text" id="search-games" placeholder="🔍 Поиск по названию мема...">
+                            </div>
+                        </div>
+
+
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./assets/DisappointedGuy.png" alt="Разочарование">
+                                <div class="img-title">Разочарование</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./assets/ConfusedNick.png" alt="Недопонимание">
+                                <div class="img-title">Недопонимание</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./assets/HideThePain.png" alt="Спрятанная боль">
+                                <div class="img-title">Спрятанная боль</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Спортивные -->
+                    <div class="tab-content" id="Sports">
+                        <div class="searcher">
+                            <div class="search-box">
+                                <input type="text" id="search-games" placeholder="🔍 Поиск по названию мема...">
+                            </div>
+                        </div>
+
+
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./assets/ShootingOlympics.png" alt="Олимпиада по стрельбе">
+                                <div class="img-title">Олимпиада по стрельбе</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Классика -->
+                    <div class="tab-content" id="Classic">
+                        <div class="searcher">
+                            <div class="search-box">
+                                <input type="text" id="search-games" placeholder="🔍 Поиск по названию мема...">
+                            </div>
+                        </div>
+
+
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./assets/ColorRed.png" alt="Цвет всё же не красный">
+                                <div class="img-title">Цвет всё же не красный</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./assets/SadHampter.png" alt="Грустный хомяк">
+                                <div class="img-title">Грустный хомяк</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./assets/MrFresh.png" alt="Глазеющий в камеру кот">
+                                <div class="img-title">Глазеющий в камеру кот</div>
+                            </div>
+                        </div>
+                    </div>
                     
+                    <!-- Добавить мем -->
+                    <div class="tab-content" id="add-meme">
+                        <div class="add-meme-form">
+                            <h2 class="form-title">Добавить новый мем</h2>
+                    
+                    <form id="meme-form">
+                        <div class="form-group">
+                            <label for="meme-title">Название мема</label>
+                            <input type="text" id="meme-title" placeholder="Введите название мема" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="meme-url">URL изображения</label>
+                            <input type="url" id="meme-url" placeholder="Например https://example.com/meme.jpg" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="meme-category">Категория</label>
+                            <select id="meme-category" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="popular">Популярные</option>
+                                <option value="new">Новые</option>
+                                <option value="classic">Классика</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="meme-description">Описание (необязательно)</label>
+                            <textarea id="meme-description" placeholder="Краткое описание мема..." rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Отправить на модерацию</button>
+                    </form>
+
+                    <div class="mod-warn">
+                        <p>ВНИМАНИЕ: Все добавленные мемы проходят проверку модератором перед публикацией. Обычно это занимает 1-2 дня.</p>
+                    </div>
+
                     <!-- Модальные окна -->
-                    <!-- Приближённое изображение -->
                     <div class="modal">
                         <span class="close-btn">&times;</span>
                         <div class="modal-content">
@@ -72,9 +175,14 @@
                         </div>
                     </div>
 
-                    <!-- Успешная отправка мема на проверку -->
-                    <div class="notif"></div>
+                    <div class="notif" id="notif">
+                        Заявка была успешно приянта на рассмотрение!
+                    </div>
                 </div>
+
+                <footer>
+                        <p>"Музей мемов" был создан для выполнения лабораторной работы №7 - Интерактивная галерея мемов</p>
+                </footer>
             </main>
         </div>
         
